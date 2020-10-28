@@ -14,13 +14,14 @@
                 <li class="nav-item">
                     <form class="form-inline my-2 my-lg-0">
                         <div class="input-group">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-if="show">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-if="show" v-model="searchText">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1" @click="show=!show" :class="{active : show}"><img class="img-fluid" src="../assets/icons/search.svg"></span>
                             </div>
 
                         </div>
                     </form>
+                    <div class="tooltip-item">search</div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link user-info" href="#">
@@ -38,6 +39,8 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                     </div>
+                    <div class="tooltip-item">notification</div>
+
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,6 +52,8 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                     </div>
+                    <div class="tooltip-item">settings</div>
+
                 </li>
 
             </ul>
@@ -59,7 +64,8 @@
     export default{
         data(){
             return{
-                show:false
+                show:false,
+                searchText:''
             }
         },
         props:['menuShow']
@@ -80,8 +86,15 @@
         width:100%;
         z-index:1;
         .navbar-menu{
+            width:40px;
+            display:inline-block;
+            &.open{
+                img{
+                    width:35px;
+                }
+            }
             img{
-                width:30px;
+                width:28px;
             }
         }
         ul{
@@ -90,6 +103,7 @@
         .nav-item{
 
             height:45px;
+            position: relative;
 
             &:not(:last-of-type){
                 margin-right:24px;
@@ -173,6 +187,17 @@
                     }
                 }
             }
+        }
+        .tooltip-item{
+            padding:8px 16px;
+            background-color: rgba(0,0,0,0.4);
+            color:#fff;
+            border-radius: 9px;
+            text-transform: capitalize;
+            position: absolute;
+            left:50%;
+            transform:translateX(-50%);
+            display:none
         }
     }
 

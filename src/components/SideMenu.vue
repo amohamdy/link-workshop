@@ -1,14 +1,7 @@
 <template>
     <div class="side-menu">
         <div class="side-menu-inner side-left">
-            <ul class="social-media">
-                <li class="nav-item"><a href=""><img class="img-fluid rotated" src="../assets/icons/twitter.svg"></a></li>
-                <li class="nav-item"><a href=""><img class="img-fluid rotated" src="../assets/icons/facebook.svg"></a></li>
-                <li class="nav-item"><a href=""><img class="img-fluid rotated" src="../assets/icons/linkedin.svg"></a></li>
-                <li class="nav-item"><a href=""><img class="img-fluid" src="../assets/icons/yTube.svg"></a></li>
-                <li class="nav-item"><a href=""><img class="img-fluid rotated" src="../assets/icons/instgram.svg"></a></li>
-            </ul>
-
+            <SocialMediaIcons></SocialMediaIcons>
         </div>
         <div class="side-menu-inner side-right">
             <ul class="navigation top-nav">
@@ -38,7 +31,11 @@
 </template>
 
 <script>
+import SocialMediaIcons from './SocialMediaIcons.vue';
     export default{
+        components:{
+            SocialMediaIcons
+        }
     }
 
 </script>
@@ -63,26 +60,6 @@
             width:25%;
             border-right:1px solid rgba(225,225,225,0.05);
             @include display-flex(row, center,center);
-                ul{
-                    align-self: flex-end;
-                    li{
-                        margin:24px 16px;
-
-                        img{
-                            width:25px;
-                            height: 25px;
-                            &.rotated{
-                            transform:rotate(-90deg)
-                            }
-                        }
-                        &:first-of-type{
-                            .rotated{
-                                transform:rotate(-58deg)
-                            }
-                        }
-
-                    }
-                }
             }
             &.side-right{
                 width:75%;
