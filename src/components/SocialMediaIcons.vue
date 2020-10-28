@@ -58,7 +58,7 @@
 
         }
         &.footer{
-            @include display-flex(row,flex-start,center);
+            @include display-flex(row-reverse,flex-start,center);
             svg{
                 path{
                     fill:$gray-2 !important;
