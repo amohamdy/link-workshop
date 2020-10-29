@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg x-pad">
+    <nav class="navbar navbar-expand-md x-pad">
         <div class="nav-left">
             <a class="navbar-menu open mr-5" @click.prevent="$emit('show-menu')"  v-if="!menuShow"><img class="img-fluid" src="../assets/icons/Menu.svg"></a>
             <a class="navbar-menu mr-5" href="#" @click.prevent="$emit('close-menu')" v-else><img class="img-fluid" src="../assets/icons/close.svg" ></a>
@@ -12,7 +12,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <form class="form-inline my-2 my-lg-0">
+                    <form class="form-inline">
                         <div class="input-group">
                             <input class="form-control" type="search" placeholder="Search" aria-label="Search" v-if="show" v-model="searchText">
                             <div class="input-group-prepend">
@@ -84,7 +84,7 @@
         left:0;
         top:0;
         width:100%;
-        z-index:1;
+        z-index:18;
         .navbar-menu{
             width:40px;
             display:inline-block;

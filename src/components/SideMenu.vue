@@ -5,7 +5,9 @@
         </div>
         <div class="side-menu-inner side-right">
             <ul class="navigation top-nav">
-                <li class="nav-item active"><a class="font-lg semi-bold" href="">home</a></li>
+                <router-link to='/' tag="li" exact>
+                    <a class="font-lg semi-bold" href="">home</a>
+                </router-link>
                 <li class="nav-item">
                     <a class="font-lg semi-bold mb-2" href="">about us</a>
                     <a class="font-md regular mb-2" href="">who are us</a>
@@ -47,11 +49,15 @@ import SocialMediaIcons from './SocialMediaIcons.vue';
         width:600px;
         height:calc(100vh - 5rem);
         position: fixed;
-        z-index: 1;
+        z-index: 18;
         background-color: $green;
         left:0;
         top:5rem;
         border:1px solid rgba(255,255,255,0.35);
+        @media screen and (max-width:767.98px){
+            width:300px;
+            overflow: scroll;
+        }
         .side-menu-inner{
             padding:2rem;
             height:100%;
