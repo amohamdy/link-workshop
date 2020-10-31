@@ -101,7 +101,7 @@ export default {
           text:'Omniyat'
         },
         {
-          img:require('../assets/icons/info.svg'),
+          img:require('../assets/icons/surface.svg'),
           text:'Give Time'
         },
         {

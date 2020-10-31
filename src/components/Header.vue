@@ -53,8 +53,12 @@
 
                     <li class="dropdown-item">
                         <small>Font Size</small>
-                        <a href="#">English</a>
-                        <a href="#">العربيه</a>
+                        <div class="d-flex align-items-center">
+                        <a class="font-xlg semi-bold" href="#">A</a>
+                        <a class="font-lg semi-bold text-green mx-3" href="#">A</a>
+                        <a class="font-md semi-bold" href="#">A</a>
+                        </div>
+
                     </li>
                     <div class="dropdown-divider"></div>
 
@@ -193,6 +197,9 @@ import Search from './Search';
                         &:hover{
                             color:$primary !important;
                         }
+                    }
+                    @media screen and (max-width:767.98px){
+                        padding:0.25rem 1rem
                     }
                 }
                 small{
