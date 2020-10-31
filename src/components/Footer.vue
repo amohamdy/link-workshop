@@ -86,10 +86,7 @@ footer{
         form{
             .input-group{
                 height: 50px;
-                width:85%;
-                @media screen and (max-width:991.98px){
-                    width:100%;
-                }
+                width:100%;
             input{
                 background-color: $input-fill;
                 height: 100%;

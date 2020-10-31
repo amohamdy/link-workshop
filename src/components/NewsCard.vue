@@ -1,5 +1,5 @@
 <template>
-    <div class="card-inner">
+    <div class="card-inner" :class="{single :isSingle}">
         <div class="card-image">
             <img class="img-fluid" :src="article.urlToImage">
             <div class="overlay"></div>
@@ -13,7 +13,10 @@
             <ul class="list tags">
                 <li class="tag-item font-xs regular" v-for="source in filteredSourceCategory" :key="source.id">{{source.name}}</li>
             </ul>
+            <p class="font-xs regular" v-if="isSingle">{{article.description}}</p>
+
             <p class="font-xs regular">{{article.content}}</p>
+
             <span class="date font-xs regular"><img class="img-fluid mr-3" src="../assets/icons/date.svg"> {{article.publishedAt}}</span>
         </div>
     </div>
@@ -22,7 +25,7 @@
 
 <script>
 export default{
-    props:['article', 'sourceCategory'],
+    props:['article', 'sourceCategory', 'isSingle'],
     computed:{
         filteredSourceCategory(){
         let article = this.article
@@ -33,6 +36,7 @@ export default{
         })
         }
     },
+
 }
 </script>
 
@@ -44,10 +48,22 @@ export default{
     @include display-flex(column, flex-start, flex-start);
     height:35rem;
     text-transform: capitalize;
+    &.single{
+        height:auto;
+        .card-image{
+            height:400px;
+        }
+        .card-content{
+            h2,p{
+                -webkit-line-clamp: unset !important;
+            }
+        }
+    }
     .card-image{
         height:45%;
         @include display-flex(row,center,center);
         position:relative;
+        width:100%;
         img{
             object-fit: cover;
             height: 100%;

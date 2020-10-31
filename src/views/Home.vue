@@ -44,7 +44,7 @@
     <section class="content-wrapper-inner xy-pad" id="news">
       <div class="head">
         <h1 class="font-xlg semi-bold">Latest News</h1>
-        <router-link to="/news">view all <img class="img-fluid" src="../assets/icons/arrow.svg"></router-link>
+        <router-link to="/news"> <span class="font-xs regular text-green">view all </span><img class="img-fluid" src="../assets/icons/arrow.svg"></router-link>
       </div>
       <div class="news-wrapper">
           <a class="news-card shadow" href="#" v-for="article in filteredArticles" :key="article.id">
@@ -126,11 +126,7 @@ export default {
   },
   computed:{
     filteredArticles: function(){
-       return this.articles.filter(function(article){
-         if (article.showOnHomepage){
-           return true
-         }
-      })
+       return this.articles.filter(article=>article.showOnHomepage?true:false)
     }
   },
   mounted(){
@@ -312,6 +308,9 @@ export default {
       .head{
         @include display-flex(row, space-between, center);
         margin-bottom:3rem;
+        .text-green{
+          text-transform: capitalize;
+        }
       }
       .news-wrapper{
         @include display-flex(row, flex-start,flex-start);

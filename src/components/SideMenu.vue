@@ -5,16 +5,16 @@
         </div>
         <div class="side-menu-inner side-right">
             <ul class="navigation top-nav">
-                <router-link to='/' tag="li" exact>
-                    <a class="font-lg semi-bold" href="">home</a>
-                </router-link>
+                <li class="nav-item active">
+                    <router-link to="/" class="font-lg semi-bold" exact :active-class="active">home</router-link>
+                </li>
                 <li class="nav-item">
                     <a class="font-lg semi-bold mb-2" href="">about us</a>
                     <a class="font-md regular mb-2" href="">who are us</a>
                     <a class="font-md regular mb-2" href="">Why us?</a>
                 </li>
                 <li class="nav-item">
-                    <a class="font-lg semi-bold mb-2" href="">news</a>
+                    <router-link class="font-lg semi-bold mb-2" to="/news" exact :active-class="active">news</router-link>
                     <a class="font-md regular mb-2" href="">news</a>
                     <a class="font-md regular mb-2" href="">events</a>
                 </li>
@@ -80,11 +80,7 @@ import SocialMediaIcons from './SocialMediaIcons.vue';
                     margin:16px;
 
                     @include display-flex(column, flex-start, flex-start);
-                    &.active{
-                        .font-lg{
-                            color:$primary !important;
-                        }
-                    }
+
 
                     a{
                         &.font-lg{
@@ -92,6 +88,10 @@ import SocialMediaIcons from './SocialMediaIcons.vue';
                         }
                         &.font-md{
                         color:$gray !important;
+                        }
+                        &.router-link-active{
+                            color:$primary !important;
+
 
                         }
 
