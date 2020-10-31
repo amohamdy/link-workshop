@@ -5,7 +5,7 @@
         <NewsCard :article=articles[this.id-1] :sourceCategory=sourceCategory :isSingle=true></NewsCard>
     </div>
     <div class="related-cards-wrapper py-5">
-    <h1 class="font-xlg semi-bold pb-5 w-100">Related Topics</h1>
+        <h1 class="font-xlg semi-bold pb-5 w-100">Related Topics</h1>
         <div class="related-card"  v-for="card in relevantCards" :key="card.index">
             <div class="card-inner">
                 <img class="img-fluid" :src="card.img">
@@ -16,6 +16,8 @@
                 </div>
             </div>
         </div>
+        <router-link to="" class="ml-auto"> <span class="font-xs regular text-green">view all </span><img class="img-fluid" src="../assets/icons/arrow.svg"></router-link>
+
     </div>
 </div>
 </template>
@@ -97,7 +99,7 @@ export default{
                             }
                             h2{
                                 margin:0 0 16px 0;
-                                width:80%;
+                                width:85%;
                             @media screen and (max-width:991.98px){
                                     width:100%;
                                 }

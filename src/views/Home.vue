@@ -230,11 +230,11 @@ export default {
       .square-wrapper{
         @include display-flex(row, center,center);
         flex-wrap: wrap;
-        width:67%;
+        width:65%;
         @media screen and (max-width:991.98px){
               width:100%;
         }
-        @media screen and (min-width:992px) and (max-width:1199.98px){
+        @media screen and (min-width:992px) and (max-width:1360.98px){
           width:90%;
         }
 
@@ -247,8 +247,8 @@ export default {
 
           }
         .square-inner{
-          height:200px;
-          width:200px;
+          height:180px;
+          width:180px;
           border:4px solid #fff;
           transform:rotate(45deg);
           position: relative;
