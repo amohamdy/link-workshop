@@ -47,9 +47,9 @@
         <router-link to="/news"> <span class="font-xs regular text-green">view all </span><img class="img-fluid" src="../assets/icons/arrow.svg"></router-link>
       </div>
       <div class="news-wrapper">
-          <a class="news-card shadow" href="#" v-for="article in filteredArticles" :key="article.id">
+          <router-link class="news-card shadow" :to="'/single/'+ article.id" v-for="article in filteredArticles" :key="article.id">
             <NewsCard :article=article :sourceCategory=sourceCategory></NewsCard>
-          </a>
+          </router-link>
 
       </div>
     </section>
